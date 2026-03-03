@@ -107,8 +107,8 @@
 }
 
 .themeBtn {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: none;
@@ -139,16 +139,17 @@
 }
 
 .langLabel {
-  font-size: 0.65rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.4);
   transition: color 0.2s;
   font-family: var(--font-main);
+  font-weight: 200;
   white-space: nowrap;
 }
 
 .langLabelActive {
   color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
+  font-weight: 200;
 }
 
 .langSwitch {

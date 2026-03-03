@@ -4,7 +4,7 @@
   border: 1px solid var(--cs-accent);
   border-radius: var(--border-radius);
   padding: 20px;
-  background: #fff;
+  background: var(--cs-bg);
   display: flex;
   flex-direction: column;
   gap: 0;

@@ -41,7 +41,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: url('/images/campus-bg.jpg');
+  background-image: url('/images/campus-bg.jpg'); /* background-image: url('/images/Darkmode-bg.jpg*/
   background-attachment: fixed;
   background-position: center top;
   background-size: cover;
@@ -63,7 +63,7 @@ a {
 [data-theme="dark"] {
   --cs-text-main: #e0ddd9;
   --cs-text-muted: #9a9590;
-  --cs-bg: #1a1a2e;
+  --cs-bg: #191a1a;
 }
 
 [data-theme="dark"] body {
@@ -72,7 +72,7 @@ a {
 }
 
 [data-theme="dark"] .contentColumn {
-  background: rgba(26, 26, 46, 0.97);
+  background: rgba(26, 26, 26, 0.97);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
