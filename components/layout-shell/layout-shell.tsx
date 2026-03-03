@@ -15,7 +15,7 @@ const afEquivalents = new Set([
 ]);
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
@@ -37,20 +37,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
 
   return (
     <>
-      {/* Hamburger toggle */}
-      <button
-        className={styles.toggle}
-        onClick={() => setSidebarOpen(!sidebarOpen)}
-        aria-label="Toggle navigation"
-      >
-        <span className={`${styles.hamburger} ${sidebarOpen ? styles.hamburgerOpen : ''}`}>
-          <span />
-          <span />
-          <span />
-        </span>
-      </button>
-
-      {/* Overlay */}
+      {/* Overlay — mobile only via CSS, dismisses sidebar */}
       {sidebarOpen && (
         <div className={styles.overlay} onClick={() => setSidebarOpen(false)} />
       )}
@@ -59,15 +46,18 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
       <Sidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
-        darkMode={darkMode}
-        onToggleDark={() => setDarkMode(!darkMode)}
-        lang={lang}
-        onToggleLang={handleToggleLang}
       />
 
       {/* Main content */}
-      <main className={styles.main}>
-        <SiteHeader />
+      <main className={`${styles.main} ${sidebarOpen ? styles.mainWithSidebar : ''}`}>
+        <SiteHeader
+          sidebarOpen={sidebarOpen}
+          onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+          darkMode={darkMode}
+          onToggleDark={() => setDarkMode(!darkMode)}
+          lang={lang}
+          onToggleLang={handleToggleLang}
+        />
         <div style={{ flex: 1 }}>
           <div className="contentColumn">
             {children}
@@ -75,9 +65,6 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
         </div>
         <Footer />
       </main>
-
-      {/* Floating outline navigator */}
-      {/* Removed - page-outline component deleted */}
     </>
   );
 }

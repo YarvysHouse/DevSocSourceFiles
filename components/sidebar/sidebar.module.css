@@ -8,17 +8,12 @@
   left: 0;
   display: flex;
   z-index: 100;
+  transform: translateX(-100%);
   transition: transform var(--transition-speed) ease;
 }
 
-@media (max-width: 860px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebarOpen {
-    transform: translateX(0);
-  }
+.sidebarOpen {
+  transform: translateX(0);
 }
 
 /* Activity bar — thin icon strip on the far left */
