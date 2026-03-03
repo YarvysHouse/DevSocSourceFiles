@@ -197,10 +197,10 @@
 }
 
 .resourceCard {
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid ;
   border-radius: var(--border-radius);
   padding: 14px 16px;
-  background: #fff;
+  background: var(--cs-bg);
   transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
   text-decoration: none;
   display: block;
@@ -219,7 +219,7 @@
 .resourceLabel {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--cs-primary);
+  color: var(--cs-secondary);
   line-height: 1.35;
 }
 
