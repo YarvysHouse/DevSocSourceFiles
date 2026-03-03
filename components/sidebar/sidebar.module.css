@@ -1,0 +1,251 @@
+/* components/sidebar/sidebar.module.css */
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 100;
+  transition: transform var(--transition-speed) ease;
+}
+
+@media (max-width: 860px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+}
+
+/* Activity bar — thin icon strip on the far left */
+.activityBar {
+  width: 42px;
+  background: var(--cs-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.activityIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  border: none;
+  background: none;
+  border-left: 2px solid transparent;
+}
+
+.activityIcon:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.activityIconActive {
+  color: #fff;
+  border-left-color: var(--cs-accent);
+}
+
+/* Explorer panel */
+.explorer {
+  flex: 1;
+  background: var(--cs-primary);
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Consolas', monospace;
+  font-size: 0.76rem;
+}
+
+/* Panel header */
+.panelHeader {
+  padding: 10px 14px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+/* Workspace label */
+.workspace {
+  padding: 8px 14px 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.workspaceChevron {
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Logo area */
+.logoArea {
+  padding: 12px 14px 8px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 120px;
+  opacity: 0.85;
+  object-fit: contain;
+}
+
+/* Tree container */
+.tree {
+  flex: 1;
+  padding: 2px 0 12px;
+  overflow-y: auto;
+}
+
+/* Tree item (file or folder) */
+.treeItem {
+  display: flex;
+  align-items: center;
+  padding: 3px 14px 3px 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.65;
+  position: relative;
+}
+
+.treeItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.treeItemActive {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+/* Indent guides */
+.indent {
+  display: inline-block;
+  width: 16px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.indent::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Icons */
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-right: 6px;
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.folderIcon {
+  color: var(--cs-accent);
+}
+
+.folderIconOpen {
+  color: var(--cs-accent);
+}
+
+.fileIcon {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.chevron {
+  width: 12px;
+  flex-shrink: 0;
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.3);
+  transition: transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+.label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Folder section — extra breathing room between top-level groups */
+.treeFolder {
+  margin-top: 10px;
+}
+
+/* Submenu */
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+}
+
+.submenuOpen {
+  max-height: 500px;
+}
+
+/* Bottom status bar */
+.statusBar {
+  flex-shrink: 0;
+  background: var(--cs-primary);
+  padding: 4px 14px;
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ec957;
+  margin-right: 6px;
+  display: inline-block;
+}

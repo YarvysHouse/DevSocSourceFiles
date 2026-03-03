@@ -1,0 +1,128 @@
+/* app/teaching/programmes/programmes.module.css */
+
+.aside {
+  background: var(--cs-bg);
+  border-left: 3px solid var(--cs-accent);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--cs-text-muted);
+}
+
+.aside strong {
+  color: var(--cs-text-main);
+}
+
+.aside ul {
+  padding-left: 20px;
+  margin: 6px 0 0;
+}
+
+.aside li {
+  margin-bottom: 4px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 24px;
+  font-size: 0.85rem;
+}
+
+.table thead tr {
+  background: var(--cs-primary);
+  color: #fff;
+}
+
+.table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  vertical-align: top;
+  line-height: 1.65;
+  color: var(--cs-text-main);
+}
+
+.table td strong {
+  color: var(--cs-text-main);
+}
+
+.table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+.notes {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--cs-text-muted);
+  margin: 0 0 24px;
+  padding-left: 20px;
+}
+
+.notes li {
+  margin-bottom: 8px;
+}
+
+.notes a {
+  color: var(--cs-primary);
+}
+
+.notes a:hover {
+  color: var(--cs-accent);
+}
+
+/* Curriculum grid */
+.curriculumGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin: 12px 0 24px;
+  font-size: 0.84rem;
+}
+
+.curriculumHeader {
+  background: var(--cs-primary);
+  color: #fff;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.curriculumCell {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  line-height: 1.6;
+}
+
+.curriculumCell:nth-child(odd) {
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.yearLabel {
+  font-weight: 700;
+  color: var(--cs-text-main);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.compulsory {
+  display: block;
+  color: var(--cs-text-main);
+}
+
+.elective {
+  display: block;
+  color: var(--cs-text-muted);
+  font-style: italic;
+}

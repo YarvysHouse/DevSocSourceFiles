@@ -1,65 +1,125 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Link from 'next/link';
+import NewsCarousel from '@/components/news-carousel/news-carousel';
+import type { NewsItem } from '@/components/news-carousel/news-carousel';
+
+const featureItems: NewsItem[] = [
+  {
+    date: '14 January 2018',
+    title: 'Everyone should code',
+    excerpt: 'Learn about a new "superpower" that isn\'t being taught in in 90% of US schools. Starring Bill Gates, Mark Zuckerberg, will.i.am, and many others.',
+    href: '/features/2018/01/14/everyone-should-code.html',
+    image: '/assets/features/everyone-should-code.jpg',
+    color: '#45645d',
+    emoji: '💻',
+  },
+  {
+    date: '20 February 2019',
+    title: 'The best jobs of 2024',
+    excerpt: 'Once again, Computer Science features strongly among the top entries on the list.',
+    href: '/features/2019/02/20/best-jobs.html',
+    image: '/assets/features/jobs.png',
+    color: '#9f0059',
+    emoji: '💼',
+  },
+  {
+    date: '14 January 2018',
+    title: 'Looking for a great career?',
+    excerpt: 'Come and study Computer Science! Our degrees are packed with exciting courses. Click below to find out more about First Year, Honours, Masters, Doctoral studies.',
+    href: '/features/2018/01/14/great-career.html',
+    image: '/assets/features/career.jpg',
+    color: '#ba5537',
+    emoji: '🎓',
+  },
+  {
+    date: '16 March 2018',
+    title: 'What is Computer Science?',
+    excerpt: 'The field of computer science summarised.',
+    href: '/features/2018/03/16/what-is-computer-science.html',
+    image: '/assets/features/SzJ46YA_RaA.jpg',
+    color: '#9b449b',
+    emoji: '🔬',
+  },
+];
+
+const upcomingEvents: NewsItem[] = [
+  {
+    date: '2 February 2026, 10:00',
+    title: 'Honours Orientation',
+    excerpt: 'Room K303, Knowledge Centre, Engineering. All 2026 Honours students should attend.',
+    href: '/teaching/honours/',
+    emoji: '📋',
+    color: '#e8e4e0',
+  },
+  {
+    date: '6 February 2026',
+    title: 'Deadline: Honours Project Choices',
+    excerpt: 'Submit your project preferences before this date.',
+    href: '/teaching/honours/',
+    emoji: '📝',
+    color: '#e8e4e0',
+  },
+  {
+    date: '9 February 2026',
+    title: 'First Semester Lectures Start',
+    excerpt: 'All first-semester postgraduate and undergraduate lectures begin.',
+    href: '/teaching/PG/',
+    emoji: '🏫',
+    color: '#e8e4e0',
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div>
+      <h1 style={{ marginBottom: '8px' }}>Welcome</h1>
+      <p>
+        The Department of Computer Science was founded in 1972. We have now
+        merged with Mathematics and Applied Mathematics to form the Computer
+        Science Division in the Department of Mathematical Sciences.
+      </p>
+      <p>
+        We currently have 11 full members of academic staff whose research
+        activities span a range of subject areas, including Automata Theory,
+        Broadband and Mobile Networks, Software Engineering, Program Testing
+        and Verification, Robotics, Natural Language Processing, and Machine
+        Learning.
+      </p>
+
+      {/* Quick links */}
+      {/* <div style={{
+        display: 'flex',
+        gap: '10px',
+        flexWrap: 'wrap',
+        margin: '20px 0',
+      }}> */}
+        {/* <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--cs-text-muted)', alignSelf: 'center' }}>
+          Quick links:
+        </span>
+        <a href="/teaching/first-years/" style={{
+          fontSize: '0.8rem', padding: '5px 14px', borderRadius: '16px',
+          border: '1px solid var(--cs-accent)', color: 'var(--cs-primary)', fontWeight: 500,
+        }}>Prospective students</a>
+        <a href="http://www.sun.ac.za/english/Documents/Yearbooks/Current/Science.pdf" style={{
+          fontSize: '0.8rem', padding: '5px 14px', borderRadius: '16px',
+          border: '1px solid var(--cs-accent)', color: 'var(--cs-primary)', fontWeight: 500,
+        }}>Science Yearbook</a>
+        <a href="http://www.cs.sun.ac.za/courses/cs778/" style={{
+          fontSize: '0.8rem', padding: '5px 14px', borderRadius: '16px',
+          border: '1px solid var(--cs-accent)', color: 'var(--cs-primary)', fontWeight: 500,
+        }}>RW797</a>
+        <a href="https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=computer+science+division+stellenbosch+university&btnG=" style={{
+          fontSize: '0.8rem', padding: '5px 14px', borderRadius: '16px',
+          border: '1px solid var(--cs-accent)', color: 'var(--cs-primary)', fontWeight: 500,
+        }}>CS@Google.Scholar</a>
+      </div> */}
+
+      {/* News carousel */}
+      <NewsCarousel heading="Latest News & Features" items={featureItems} />
+
+      {/* Upcoming events carousel */}
+      <NewsCarousel heading="Upcoming Events" items={upcomingEvents} />
     </div>
   );
 }

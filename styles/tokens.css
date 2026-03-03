@@ -1,0 +1,15 @@
+:root {
+  /* Brand Colors */
+  --cs-primary: #61223b;
+  --cs-accent: #caa258;
+  --cs-text-main: #2C2A29;
+  --cs-text-muted: #4d5356;
+  
+  /* Layout */
+  --sidebar-width: 280px;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+
+  /* Typography */
+  --font-main: 'Trebuchet MS', system-ui, sans-serif;
+}

@@ -1,0 +1,128 @@
+/* components/news-carousel/news-carousel.module.css */
+
+.section {
+  margin: 36px 0;
+}
+
+.heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cs-primary);
+  margin-bottom: 16px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 0;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 250px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: box-shadow var(--transition-speed), border-color var(--transition-speed);
+  text-decoration: none;
+  display: block;
+}
+
+.card:hover {
+  border-color: var(--cs-accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cardImage {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  background: var(--cs-bg);
+}
+
+.cardImagePlaceholder {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.cardBody {
+  padding: 14px 16px;
+}
+
+.cardDate {
+  font-size: 0.72rem;
+  color: var(--cs-text-muted);
+  margin-bottom: 4px;
+}
+
+.cardTitle {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--cs-text-main);
+  line-height: 1.35;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardExcerpt {
+  font-size: 0.78rem;
+  color: var(--cs-text-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Arrow buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--cs-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background var(--transition-speed);
+}
+
+.arrow:hover {
+  background: #7a2e4e;
+}
+
+.arrowLeft {
+  left: -12px;
+}
+
+.arrowRight {
+  right: -12px;
+}

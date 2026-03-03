@@ -1,0 +1,129 @@
+/* components/data-table/data-table.module.css */
+
+.wrapper {
+  margin: 12px 0 24px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+/* Header */
+.table thead tr {
+  background: var(--cs-primary);
+  color: #fff;
+}
+
+.table th {
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+/* Row number column */
+.table th:first-child,
+.table td:first-child {
+  width: 36px;
+  text-align: right;
+  padding-right: 10px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.65rem;
+  color: rgba(0, 0, 0, 0.18);
+}
+
+.table thead th:first-child {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Cells */
+.table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  color: var(--cs-text-main);
+  vertical-align: top;
+}
+
+.table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+/* Alternating rows */
+.table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.table tbody tr:nth-child(even):hover {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+/* Links */
+.table a {
+  color: var(--cs-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.table a:hover {
+  color: var(--cs-accent);
+}
+
+/* Year column styling */
+.yearCell {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.72rem;
+  color: var(--cs-text-muted);
+  white-space: nowrap;
+}
+
+/* Scrollable container for long tables */
+.scrollable {
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+/* Dark mode */
+[data-theme="dark"] .wrapper {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .table td {
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .table td:first-child {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+[data-theme="dark"] .table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}

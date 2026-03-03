@@ -1,0 +1,86 @@
+/* components/person-card/person-card.module.css */
+
+.card {
+  border: 1px solid var(--cs-accent);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cardHeader {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: var(--cs-bg);
+  flex-shrink: 0;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--cs-text-main);
+  line-height: 1.3;
+}
+
+.title {
+  font-size: 0.82rem;
+  color: var(--cs-text-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* Section label */
+.sectionLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cs-text-main);
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.divider {
+  height: 2.5px;
+  background: var(--cs-accent);
+  border: none;
+  margin: 2px 0 8px;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.detail {
+  font-size: 0.78rem;
+  color: var(--cs-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.detail a {
+  color: var(--cs-primary);
+  text-decoration: none;
+}
+
+.detail a:hover {
+  color: var(--cs-accent);
+}
+
+.detail strong {
+  color: var(--cs-text-main);
+  font-weight: 500;
+}
