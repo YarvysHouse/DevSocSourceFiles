@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Sidebar from '@/components/sidebar/sidebar';
 import Footer from '@/components/footer/footer';
+import SiteHeader from '@/components/site-header/site-header';
 import styles from './layout-shell.module.css';
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
@@ -46,6 +47,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
 
       {/* Main content */}
       <main className={styles.main}>
+        <SiteHeader />
         <div style={{ flex: 1 }}>
           <div className="contentColumn">
             {children}

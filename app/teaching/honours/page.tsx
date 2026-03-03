@@ -9,7 +9,7 @@ export default function Honours() {
       {/* Hero banner */}
       <div className={styles.hero}>
         <div className={styles.heroContent}>
-          <div className={styles.heroLabel}>Postgraduate Programme</div>
+          <div className={styles.heroLabel}>Honours Programme</div>
           <h1 className={styles.heroTitle}>Honours in Computer Science</h1>
           <p className={styles.heroSub}>
             A one-year full-time postgraduate programme — a mix of core Computer Science theory courses and up-to-date application courses.

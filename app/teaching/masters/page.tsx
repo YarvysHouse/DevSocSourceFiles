@@ -8,7 +8,7 @@ export default function Masters() {
       {/* Hero banner */}
       <div className={styles.hero}>
         <div className={styles.heroContent}>
-          <div className={styles.heroLabel}>Postgraduate Programme</div>
+          <div className={styles.heroLabel}>Master's Programme</div>
           <h1 className={styles.heroTitle}>Masters in Computer Science</h1>
           <p className={styles.heroSub}>
             A two-year thesis-based programme. Learn to evaluate and conduct world-class research, and become a master in your field.

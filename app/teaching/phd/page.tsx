@@ -8,7 +8,7 @@ export default function PhD() {
       {/* Hero banner */}
       <div className={styles.hero}>
         <div className={styles.heroContent}>
-          <div className={styles.heroLabel}>Postgraduate Programme</div>
+          <div className={styles.heroLabel}>PhD Programme</div>
           <h1 className={styles.heroTitle}>Doctorate in Computer Science</h1>
           <p className={styles.heroSub}>
             A three-year dissertation-based degree focused on original, cutting-edge research in a specialised field of Computer Science.

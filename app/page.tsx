@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import NewsCarousel from '@/components/news-carousel/news-carousel';
 import type { NewsItem } from '@/components/news-carousel/news-carousel';
+import EventTimeline from '@/components/event-timeline/event-timeline';
 
 const featureItems: NewsItem[] = [
   {
@@ -119,7 +120,7 @@ export default function HomePage() {
       <NewsCarousel heading="Latest News & Features" items={featureItems} />
 
       {/* Upcoming events carousel */}
-      <NewsCarousel heading="Upcoming Events" items={upcomingEvents} />
+      <EventTimeline heading="Upcoming Events" items={upcomingEvents} />
     </div>
   );
 }

@@ -116,9 +116,9 @@ export default function Sidebar({ isOpen, onClose, darkMode, onToggleDark, lang,
 
         {/* Stellenbosch University logo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <div className={styles.logoArea}>
+        {/* <div className={styles.logoArea}>
           <img src="/images/Frame 11-2.png" alt="Stellenbosch University" className={styles.logo} />
-        </div>
+        </div> */}
 
         <div className={styles.workspace}>
           <span className={styles.workspaceChevron}>▾</span>
