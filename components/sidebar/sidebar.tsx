@@ -85,10 +85,9 @@ function isActive(pathname: string, href: string) { return norm(pathname) === no
 
 interface SidebarProps {
   isOpen: boolean;
-  onClose: () => void;
 }
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+export default function Sidebar({ isOpen }: SidebarProps) {
   const pathname = usePathname();
   const lang: 'en' | 'af' = pathname.startsWith('/af') ? 'af' : 'en';
 
@@ -153,7 +152,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                           key={child.href}
                           href={href}
                           className={`${styles.treeItem} ${isActive(pathname, href) ? styles.treeItemActive : ''}`}
-                          onClick={onClose}
                         >
                           <span className={styles.indent} />
                           <span className={styles.chevron} style={{ visibility: 'hidden' }}>▸</span>
@@ -175,7 +173,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 key={item.href}
                 href={href}
                 className={`${styles.treeItem} ${isActive(pathname, href) ? styles.treeItemActive : ''}`}
-                onClick={onClose}
               >
                 <span className={styles.chevron} style={{ visibility: 'hidden' }}>▸</span>
                 <span className={`${styles.icon} ${styles.fileIcon}`}>

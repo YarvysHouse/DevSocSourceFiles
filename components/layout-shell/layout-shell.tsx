@@ -43,10 +43,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
       )}
 
       {/* Sidebar */}
-      <Sidebar
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
+      <Sidebar isOpen={sidebarOpen} />
 
       {/* Main content */}
       <main className={`${styles.main} ${sidebarOpen ? styles.mainWithSidebar : ''}`}>
