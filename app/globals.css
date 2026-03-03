@@ -11,7 +11,7 @@
   --border-radius: 8px;
   --transition-speed: 0.3s;
   --content-max-width: 1100px;
-
+ /*212, 213, 214 ; #D4D5D6*/
   --font-main: 'Trebuchet MS', system-ui, sans-serif;
 }
 
@@ -92,6 +92,15 @@ a {
 
 [data-theme="dark"] .contentColumn a:hover {
   color: #e0c080;
+}
+
+[data-theme="dark"] .contentColumn table {
+  border-collapse: collapse;
+}
+
+[data-theme="dark"] .contentColumn td,
+[data-theme="dark"] .contentColumn th {
+  border-color: #d4d4d4;
 }
 
 /* Content column — white panel sitting over the background */

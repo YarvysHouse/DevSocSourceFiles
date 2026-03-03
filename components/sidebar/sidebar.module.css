@@ -141,8 +141,9 @@
 }
 
 .treeItemActive {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   color: #fff;
+  box-shadow: inset 2px 0 0 var(--cs-accent);
 }
 
 /* Indent guides */

@@ -29,6 +29,10 @@
   background: rgba(0, 0, 0, 0.015);
 }
 
+:global([data-theme="dark"]) .trigger {
+  color: #d4d4d4;
+}
+
 .triggerOpen {
   border-left-color: var(--cs-accent);
   background: rgba(0, 0, 0, 0.01);
@@ -43,7 +47,7 @@
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Consolas', monospace;
   font-size: 0.68rem;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.1);
+  color: rgba(212, 212, 212, 0.4);
   user-select: none;
 }
 
@@ -106,7 +110,7 @@
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Consolas', monospace;
   font-size: 0.68rem;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.06);
+  color: rgba(212, 212, 212, 0.25);
   line-height: 1.7;
   height: 1.7em;
 }

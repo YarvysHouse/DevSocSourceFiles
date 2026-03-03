@@ -10,8 +10,8 @@ const featureItems: NewsItem[] = [
     date: '14 January 2018',
     title: 'Everyone should code',
     excerpt: 'Learn about a new "superpower" that isn\'t being taught in in 90% of US schools. Starring Bill Gates, Mark Zuckerberg, will.i.am, and many others.',
-    href: '/features/2018/01/14/everyone-should-code.html',
-    image: '/public/images/everyone-should-code.jpg',
+    href: '/features/everyone-should-code',
+    image: '/images/everyone-should-code.jpg',
     color: '#45645d',
     emoji: '💻',
   },
@@ -19,8 +19,8 @@ const featureItems: NewsItem[] = [
     date: '20 February 2019',
     title: 'The best jobs of 2024',
     excerpt: 'Once again, Computer Science features strongly among the top entries on the list.',
-    href: '/features/2019/02/20/best-jobs.html',
-    image: '/public/images/jobs.png',
+    href: '/features/best-jobs',
+    image: '/images/jobs.png',
     color: '#9f0059',
     emoji: '💼',
   },
@@ -28,8 +28,8 @@ const featureItems: NewsItem[] = [
     date: '14 January 2018',
     title: 'Looking for a great career?',
     excerpt: 'Come and study Computer Science! Our degrees are packed with exciting courses. Click below to find out more about First Year, Honours, Masters, Doctoral studies.',
-    href: '/features/2018/01/14/great-career.html',
-    image: '/public/images/Looking-For-A-Job.jpg',
+    href: '/features/great-career',
+    image: '/images/Looking-For-A-Job.jpg',
     color: '#ba5537',
     emoji: '🎓',
   },
@@ -37,8 +37,8 @@ const featureItems: NewsItem[] = [
     date: '16 March 2018',
     title: 'What is Computer Science?',
     excerpt: 'The field of computer science summarised.',
-    href: '/features/2018/03/16/what-is-computer-science.html',
-    image: '/public/images/CompSci.jpg',
+    href: '/features/what-is-computer-science',
+    image: '/images/CompSci.jpg',
     color: '#9b449b',
     emoji: '🔬',
   },
@@ -87,34 +87,6 @@ export default function HomePage() {
         and Verification, Robotics, Natural Language Processing, and Machine
         Learning.
       </p>
-
-      {/* Quick links */}
-      {/* <div style={{
-        display: 'flex',
-        gap: '10px',
-        flexWrap: 'wrap',
-        margin: '20px 0',
-      }}> */}
-        {/* <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--cs-text-muted)', alignSelf: 'center' }}>
-          Quick links:
-        </span>
-        <a href="/teaching/first-years/" style={{
-          fontSize: '0.8rem', padding: '5px 14px', borderRadius: '16px',
-          border: '1px solid var(--cs-accent)', color: 'var(--cs-primary)', fontWeight: 500,
-        }}>Prospective students</a>
-        <a href="http://www.sun.ac.za/english/Documents/Yearbooks/Current/Science.pdf" style={{
-          fontSize: '0.8rem', padding: '5px 14px', borderRadius: '16px',
-          border: '1px solid var(--cs-accent)', color: 'var(--cs-primary)', fontWeight: 500,
-        }}>Science Yearbook</a>
-        <a href="http://www.cs.sun.ac.za/courses/cs778/" style={{
-          fontSize: '0.8rem', padding: '5px 14px', borderRadius: '16px',
-          border: '1px solid var(--cs-accent)', color: 'var(--cs-primary)', fontWeight: 500,
-        }}>RW797</a>
-        <a href="https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=computer+science+division+stellenbosch+university&btnG=" style={{
-          fontSize: '0.8rem', padding: '5px 14px', borderRadius: '16px',
-          border: '1px solid var(--cs-accent)', color: 'var(--cs-primary)', fontWeight: 500,
-        }}>CS@Google.Scholar</a>
-      </div> */}
 
       {/* News carousel */}
       <NewsCarousel heading="Latest News & Features" items={featureItems} />
