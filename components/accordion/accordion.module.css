@@ -20,7 +20,7 @@
   font-family: var(--font-main);
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--cs-primary);
+  color: var(--cs-secondary);
   transition: all 0.2s;
   text-align: left;
 }
