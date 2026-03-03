@@ -7,8 +7,6 @@ import { alumniFaculty, doctoralGraduates, mastersGraduates } from '@/app/people
 import { academicStaff, administrativeStaff, doctoralStudents, mastersStudents } from '@/app/people/staff-data';
 import styles from '@/app/people/people.module.css';
 
-export const metadata = { title: 'Mense – Stellenbosch RW/CS' };
-
 const graduateColumns = [
   { key: 'name', label: 'Naam' },
   {
