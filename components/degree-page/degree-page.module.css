@@ -2,25 +2,11 @@
 
 /* ── Hero banner ── */
 .hero {
-  background: var(--cs-primary);
+  background: var(--cs-primary) url('/images/Frame 11-2.png') center/cover no-repeat;
   margin: -36px -48px 32px;
   padding: 48px 48px 40px;
   position: relative;
   overflow: hidden;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.015) 0px,
-    rgba(255, 255, 255, 0.015) 1px,
-    transparent 1px,
-    transparent 14px
-  );
-  pointer-events: none;
 }
 
 .heroContent {
@@ -40,7 +26,7 @@
 .heroTitle {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #fff;
+  color: #fff !important; /* beats .contentColumn h1 specificity in globals */
   line-height: 1.25;
   margin-bottom: 10px;
 }
@@ -297,3 +283,4 @@
     font-size: 1.4rem;
   }
 }
+

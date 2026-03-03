@@ -3,37 +3,37 @@
 import { useState } from 'react';
 import PersonCard from '@/components/person-card/person-card';
 import DataTable from '@/components/data-table/data-table';
-import { alumniFaculty, doctoralGraduates, mastersGraduates } from './alumni-data';
-import { academicStaff, administrativeStaff, doctoralStudents, mastersStudents } from './staff-data';
-import styles from './people.module.css';
+import { alumniFaculty, doctoralGraduates, mastersGraduates } from '@/app/people/alumni-data';
+import { academicStaff, administrativeStaff, doctoralStudents, mastersStudents } from '@/app/people/staff-data';
+import styles from '@/app/people/people.module.css';
+
+export const metadata = { title: 'Mense – Stellenbosch RW/CS' };
 
 const graduateColumns = [
-  { key: 'name', label: 'Name' },
+  { key: 'name', label: 'Naam' },
   {
     key: 'title',
-    label: 'Thesis',
+    label: 'Tesis',
     render: (val: string, row: Record<string, string>) =>
       row.href ? <a href={row.href}>{val}</a> : val,
   },
-  { key: 'year', label: 'Year' },
+  { key: 'year', label: 'Jaar' },
 ];
-
-// ── Tabs ──
 
 type TabKey = 'staff' | 'students' | 'alumni';
 
 const tabs: { key: TabKey; label: string }[] = [
-  { key: 'staff', label: 'Staff' },
-  { key: 'students', label: 'Students' },
+  { key: 'staff', label: 'Personeel' },
+  { key: 'students', label: 'Studente' },
   { key: 'alumni', label: 'Alumni' },
 ];
 
-export default function PeoplePage() {
+export default function MensePage() {
   const [activeTab, setActiveTab] = useState<TabKey>('staff');
 
   return (
     <div>
-      <h1 style={{ marginBottom: '24px' }}>People</h1>
+      <h1 style={{ marginBottom: '24px' }}>Mense</h1>
 
       {/* Tabs */}
       <div className={styles.tabs}>
@@ -48,10 +48,10 @@ export default function PeoplePage() {
         ))}
       </div>
 
-      {/* Staff tab */}
+      {/* Personeel tab */}
       {activeTab === 'staff' && (
         <>
-          <h2 className={styles.sectionHeading}>Academic Staff</h2>
+          <h2 className={styles.sectionHeading}>Akademiese Personeel</h2>
           <hr className={styles.sectionDivider} />
           <div className={styles.grid}>
             {academicStaff.map((person, i) => (
@@ -59,7 +59,7 @@ export default function PeoplePage() {
             ))}
           </div>
 
-          <h2 className={styles.sectionHeading}>Administrative Staff</h2>
+          <h2 className={styles.sectionHeading}>Administratiewe Personeel</h2>
           <hr className={styles.sectionDivider} />
           <div className={styles.grid}>
             {administrativeStaff.map((person, i) => (
@@ -69,10 +69,10 @@ export default function PeoplePage() {
         </>
       )}
 
-      {/* Students tab */}
+      {/* Studente tab */}
       {activeTab === 'students' && (
         <>
-          <h2 className={styles.sectionHeading}>Doctoral Students</h2>
+          <h2 className={styles.sectionHeading}>Doktorale Studente</h2>
           <hr className={styles.sectionDivider} />
           <div className={styles.grid}>
             {doctoralStudents.map((person, i) => (
@@ -80,7 +80,7 @@ export default function PeoplePage() {
             ))}
           </div>
 
-          <h2 className={styles.sectionHeading}>Masters Students</h2>
+          <h2 className={styles.sectionHeading}>Meestersstudente</h2>
           <hr className={styles.sectionDivider} />
           <div className={styles.grid}>
             {mastersStudents.map((person, i) => (
@@ -93,7 +93,7 @@ export default function PeoplePage() {
       {/* Alumni tab */}
       {activeTab === 'alumni' && (
         <>
-          <h2 className={styles.sectionHeading}>Alumni Faculty</h2>
+          <h2 className={styles.sectionHeading}>Alumni Dosente</h2>
           <hr className={styles.sectionDivider} />
           <div style={{ columnCount: 2, columnGap: '24px', fontSize: '0.82rem', color: 'var(--cs-text-muted)', lineHeight: 1.8, marginBottom: '20px' }}>
             {alumniFaculty.map((name, i) => (
@@ -101,19 +101,13 @@ export default function PeoplePage() {
             ))}
           </div>
 
-          <h2 className={styles.sectionHeading}>Doctoral Graduates</h2>
+          <h2 className={styles.sectionHeading}>Doktorale Gegradueerdes</h2>
           <hr className={styles.sectionDivider} />
-          <DataTable
-            columns={graduateColumns}
-            data={doctoralGraduates}
-          />
+          <DataTable columns={graduateColumns} data={doctoralGraduates} />
 
-          <h2 className={styles.sectionHeading}>Masters Graduates</h2>
+          <h2 className={styles.sectionHeading}>Meestersgegradueerdes</h2>
           <hr className={styles.sectionDivider} />
-          <DataTable
-            columns={graduateColumns}
-            data={mastersGraduates}
-          />
+          <DataTable columns={graduateColumns} data={mastersGraduates} />
         </>
       )}
     </div>
